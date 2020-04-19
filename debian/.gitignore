@@ -1,0 +1,10 @@
+meshoptimizer-dev.debhelper.log
+meshoptimizer-dev.substvars
+meshoptimizer-dev/
+meshoptimizer.debhelper.log
+meshoptimizer.postinst.debhelper
+meshoptimizer.postrm.debhelper
+meshoptimizer.substvars
+meshoptimizer/
+files
+tmp/

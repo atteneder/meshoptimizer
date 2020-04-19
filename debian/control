@@ -1,0 +1,21 @@
+Source: meshoptimizer
+Priority: optional
+Maintainer: Vladimír Vondruš <mosra@centrum.cz>
+Build-Depends: debhelper (>= 9), cmake (>= 3.4)
+Standards-Version: 3.9.2
+Section: libs
+Homepage: https://github.com/zeux/meshoptimizer
+Vcs-Git: https://github.com/zeux/meshoptimizer
+Vcs-Browser: https://github.com/zeux/meshoptimizer
+
+Package: meshoptimizer-dev
+Section: libdevel
+Architecture: any
+Depends: meshoptimizer (= ${binary:Version})
+Description: Mesh optimization library that makes meshes smaller and faster to render
+
+Package: meshoptimizer
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Mesh optimization library that makes meshes smaller and faster to render
