@@ -1,0 +1,28 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: install_dependencies
+      run: |
+        sudo apt update
+        sudo apt install cmake dpkg-dev debhelper
+    - name: checkout
+      uses: actions/checkout@master
+      with:
+        path: meshoptimizer
+    - name: create_package
+      working-directory: ./meshoptimizer
+      run: dpkg-buildpackage -j2 --no-sign
+    - uses: actions/upload-artifact@master
+      with:
+        name: meshoptimizer_0.14_amd64.deb
+        path: meshoptimizer_0.14_amd64.deb
+    - uses: actions/upload-artifact@master
+      with:
+        name: meshoptimizer-dev_0.14_amd64.deb
+        path: meshoptimizer-dev_0.14_amd64.deb
